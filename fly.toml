@@ -1,13 +1,24 @@
-app = "ffalma"
-primary_region = "fra"
+# fly.toml app configuration file generated for ffalmazshop-tj on 2026-09-16T13:41:33Z
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'ffalmazshop-tj'
+primary_region = 'fra'
 
 [build]
 
 [env]
-  PORT = "8080"
+  PORT = '8080'
 
 [http_service]
   internal_port = 8080
   force_https = true
-  auto_stop_machines = true
+  auto_stop_machines = 'stop'
   auto_start_machines = true
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
+  memory_mb = 1024
